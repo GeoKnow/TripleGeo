@@ -3,23 +3,6 @@
 </head>
 <body>
 
-      <span style="width:100%">
-      <table BGCOLOR="#FFFFFF" cellpadding="0" cellspacing="0" border="0" width="100%" summary="">
-      <tr><td>
-          <table cellpadding="0" cellspacing="2" border="0" width="100%" summary="">
-            <tr><td valign="bottom">
-               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-               <FONT color="#E80000" size="+3"><b>TripleGeo utility</b></FONT>
-              </td></tr>
-          </table>
-          </td>
-      </tr>
-      </table>
-      </span>
-
-<BR><HR size="1">
-
-
 <div id="readme" class="clearfix announce instapaper_body md">
 <article class="markdown-body entry-content" itemprop="mainContentOfPage">
 
