@@ -12,7 +12,7 @@
 
 <p>TripleGeo is based on open-source utility <a href="https://github.com/boricles/geometry2rdf/tree/master/Geometry2RDF">geometry2rdf</a>. TripleGeo is written in Java and is still under development; more enhancements will be included in future releases. However, all supported features have been tested and work smoothly in both MS Windows and Linux platforms.</p>
 
-<p>The web site for <a href="http://web.imis.athena-innovation.gr/~kpatro/tools/TripleGeo.html">TripleGeo</a> provides more details about the project, its architecture, usage tips, and foreseen extensions.</p>
+<p>The web site for <a href="https://web.imis.athena-innovation.gr/redmine/projects/geoknow_public/wiki/TripleGeo">TripleGeo</a> provides more details about the project, its architecture, usage tips, and foreseen extensions.</p>
 
 <h3>
 <a name="quick-start" class="anchor" href="#Quick start"><span class="octicon octicon-link"></span></a>Quick start</h3>
@@ -35,7 +35,7 @@ How to use TripleGeo:
 
 
 
-<p>Indicative configuration files for several cases are available <a href="http://web.imis.athena-innovation.gr/~kpatro/tools/sample_conf.zip">here</a> in order to assist you toprepare your own.
+<p>Indicative configuration files for several cases are available <a href="http://web.imis.athena-innovation.gr/~kpatro/tools/sample_conf.zip">here</a> in order to assist you when preparing your own.
 
 <h3>
 <a name="input" class="anchor" href="#Input"><span class="octicon octicon-link"></span></a>Input</h3>
