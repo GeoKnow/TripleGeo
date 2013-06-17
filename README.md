@@ -25,9 +25,9 @@ How to use TripleGeo:
 <li>The current distribution comes with a dummy configuration file <code>options.conf</code>. This file contains indicative values for the most important properties. Self-contained brief instructions can guide you into the extraction process.</li>
 <li>Run the utility from the command line in two alternative modes, depending on the input data source:</li>
 <ul>
-<li>In case that triples will be extracted from ESRI shapefiles, give the following command:</br>
+<li>In case that triples will be extracted from ESRI shapefiles, and assuming that binaries are bundled together in <code>TripleGeo.jar</code>, give a command like this:</br>
 <code>java -cp lib/*;TripleGeo.jar eu.geoknow.athenarc.triplegeo.ShpToRdf options.conf</code></li>
-<li>Alternatively, if triples will be extracted from a geospatially-enabled DBMS (e.g., Oracle Spatial), give the following command:</br>
+<li>Alternatively, if triples will be extracted from a geospatially-enabled DBMS (e.g., Oracle Spatial), give a command like this:</br>
 <code>java -cp lib/*;TripleGeo.jar eu.geoknow.athenarc.triplegeo.wkt.RdbToRdf options.conf</code></li>
 </ul>
 <li>Wait until the process gets finished, and verify that the resulting output file is according to your specifications.</li>
@@ -35,7 +35,7 @@ How to use TripleGeo:
 
 
 
-<p>Indicative configuration files for several cases are available <a href="http://web.imis.athena-innovation.gr/~kpatro/tools/sample_conf.zip">here</a> in order to assist you when preparing your own.
+<p>Indicative configuration files for several cases are available <a href="https://github.com/GeoKnow/TripleGeo/tree/master/test/conf/">here</a> in order to assist you when preparing your own.
 
 <h3>
 <a name="input" class="anchor" href="#Input"><span class="octicon octicon-link"></span></a>Input</h3>
@@ -47,7 +47,7 @@ How to use TripleGeo:
 </ul>
 </ul>
 
-<p>Sample geographic <a href="http://web.imis.athena-innovation.gr/~kpatro/tools/data_shp.zip">datasets</a> for testing are available in ESRI shapefile format.</p>
+<p>Sample geographic <a href="https://github.com/GeoKnow/TripleGeo/tree/master/test/data/">datasets</a> for testing are available in ESRI shapefile format.</p>
 
 <h3>
 <a name="output" class="anchor" href="#Output"><span class="octicon octicon-link"></span></a>Output</h3>
