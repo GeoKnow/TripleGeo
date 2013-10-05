@@ -17,23 +17,30 @@
 <h3>
 <a name="quick-start" class="anchor" href="#Quick start"><span class="octicon octicon-link"></span></a>Quick start</h3>
 
-<p>In order to use TripleGeo you need Java JRE/SDK 1.7 or newer on the path (check with <code>java -version</code> if you are not sure).</p>
-
 How to use TripleGeo:
 <ul>
-<li>Download the code and extract the archive to a suitable location.</li>
+<li>Build (with ant):<br/>
+<code>mkdir build</code><br/>
+<code>ant compile</code>
+</li>
+<li>Package as a jar (with ant):<br/>
+<code>ant package</code>
+</li>
 <li>The current distribution comes with a dummy configuration file <code>options.conf</code>. This file contains indicative values for the most important properties. Self-contained brief instructions can guide you into the extraction process.</li>
-<li>Run the utility from the command line in two alternative modes, depending on the input data source:</li>
+<li>Run the jar file from the command line in 2 alternative modes, depending on the input data source:</li>
 <ul>
 <li>In case that triples will be extracted from ESRI shapefiles, and assuming that binaries are bundled together in <code>TripleGeo.jar</code>, give a command like this:</br>
-<code>java -cp lib/*;TripleGeo.jar eu.geoknow.athenarc.triplegeo.ShpToRdf options.conf</code></li>
+<code>java -cp "./lib/*;./build/jars/TripleGeo.jar" eu.geoknow.athenarc.triplegeo.ShpToRdf options.conf</code></li>
 <li>Alternatively, if triples will be extracted from a geospatially-enabled DBMS (e.g., Oracle Spatial), give a command like this:</br>
-<code>java -cp lib/*;TripleGeo.jar eu.geoknow.athenarc.triplegeo.wkt.RdbToRdf options.conf</code></li>
+<code>java -cp "./lib/*;./build/jars/TripleGeo.jar" eu.geoknow.athenarc.triplegeo.wkt.RdbToRdf options.conf</code></li>
 </ul>
 <li>Wait until the process gets finished, and verify that the resulting output file is according to your specifications.</li>
 </ul>
 
-
+An alternative way to run the TripleGeo utility (the jar file) is provided via ant targets:<br/>
+<code>ant run-on-shp -Dconfig=options.conf</code><br/>
+or, in the case of the relational database:<br/>
+<code>ant run-on-rdb -Dconfig=options.conf</code><br/>
 
 <p>Indicative configuration files for several cases are available <a href="https://github.com/GeoKnow/TripleGeo/tree/master/test/conf/">here</a> in order to assist you when preparing your own.
 
