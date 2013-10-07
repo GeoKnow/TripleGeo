@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+export DH_ALWAYS_EXCLUDE=.git
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	ant -f $$(pwd)/build.xml clean
+
+override_dh_auto_build:
+	ant -f $$(pwd)/build.xml package
+
+
+#
+# The subtree under $$(pwd)/debian/triplegeo will be verbatim copied to the target system
+#
+
+override_dh_auto_install:
+	install -m 0644 $$(pwd)/build/jars/triplegeo.jar $$(pwd)/debian/triplegeo/usr/share/java/
+	install -m 0644 $$(pwd)/lib/*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0755 $$(pwd)/debian/additions/triplegeo.sh $$(pwd)/debian/triplegeo/usr/bin
+

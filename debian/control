@@ -1,0 +1,15 @@
+Source: triplegeo
+Maintainer: Michail Alexakis <alexakis@imis.athena-innovation.gr>
+Section: misc
+Priority: optional
+Standards-Version: 3.9.2
+Build-Depends: debhelper (>= 8), default-jdk, ant
+
+Package: triplegeo
+Architecture: any
+Depends: default-jdk, ${misc:Depends}
+Description: An open-source tool for extracting geospatial features into RDF triples 
+ TripleGeo is a utility developed by the Institute for the Management of Information Systems at Athena Research Center under the EU/FP7 project GeoKnow: 
+ Making the Web an Exploratory for Geospatial Knowledge. 
+ This generic purpose, open-source tool can be used for integrating features from geospatial databases into RDF triples.
+

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+echo " == Running post-remove hooks on triplegeo (command=${1}) == "
+
+#DEBHELPER#
+
+exit 0
