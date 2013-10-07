@@ -1,6 +1,7 @@
 #!/usr/bin/make -f
 
-export DH_ALWAYS_EXCLUDE=.git
+export DH_ALWAYS_EXCLUDE=.git:.hg
+
 
 %:
 	dh $@
