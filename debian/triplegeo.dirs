@@ -2,4 +2,6 @@ usr/bin
 usr/share
 usr/share/java
 usr/share/java/triplegeo/vendor/lib
+usr/share/java/triplegeo/test/conf
+usr/share/java/triplegeo/test/data
 

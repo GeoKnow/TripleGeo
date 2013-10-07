@@ -1,4 +1,4 @@
-<project name="TripleGeo">
+<project name="triplegeo">
 
     <property name="src_dir" value="src" />
     <property name="build_dir" value="build" />

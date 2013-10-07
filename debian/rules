@@ -20,4 +20,6 @@ override_dh_auto_install:
 	install -m 0644 $$(pwd)/build/jars/triplegeo.jar $$(pwd)/debian/triplegeo/usr/share/java/
 	install -m 0644 $$(pwd)/lib/*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
 	install -m 0755 $$(pwd)/debian/additions/triplegeo.sh $$(pwd)/debian/triplegeo/usr/bin
+	install -m 0644 $$(pwd)/test/data/* $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/test/data
+	install -m 0644 $$(pwd)/test/conf/* $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/test/conf
 
