@@ -14,3 +14,10 @@ Descend into versioned directory (triplegeo) and build:
 
     debuild -us -uc
 
+This should produce the .deb package for your current architecture (in the parent directory):
+
+    triplegeo_<version>-<package-version>_<cpu-arch>.deb
+
+e.g.
+
+    triplegeo_1.0-2_amd64.deb
