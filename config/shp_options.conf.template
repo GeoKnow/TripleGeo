@@ -1,0 +1,104 @@
+##############################
+## Template for TripleGeo configuration in order to convert ESRI SHAPEFILES
+## Specify parameters according to the examples for your specific shapefile.
+##############################
+
+##############################
+## Input and output parameters 
+##############################
+
+## Local paths used during processing (all paths are RELATIVE to executable)
+#tmpDir = ./tmp
+#inputFile = ./test/data/points.shp
+#outputFile = ./output/points_shp.rdf
+tmpDir = ${tmpDir}
+inputFile = ${inputFile}
+outputFile = ${outputFile}
+
+## Specify export format for the output file
+## Possible export formats: 
+##   RDF/XML (default) 
+##   RDF/XML-ABBREV 
+##   N-TRIPLES 
+##   TURTLE (or TTL)
+##   N3
+#format = N3
+format = ${outputFormat}
+
+## Specify the type of the triple store where the exported data will be imported.
+## Possible values: 
+##    GeoSPARQL
+##    Virtuoso
+##    wgs84_pos (for WGS84 Geoposition RDF vocabulary)
+#targetStore = GeoSPARQL
+targetStore = ${outputTargetType}
+
+##############################
+## Data parameters (CASE-sensitive for shapefiles!!!)
+## Change parameters to reflect the shapefile contents that will be extracted
+##############################
+
+## MANDATORY parameter that indicates the name of the source file (without extension .shp)
+#featureString = points
+featureString = ${featureName}
+
+## MANDATORY field name containing unique identifier for each entity (i.e., each record in the shapefile)
+#attribute = osm_id
+attribute = ${resourceIdentityAttribute}
+
+## MANDATORY parameter that specifies particular values (e.g., UNK) in attributes that should not be exported as literals
+## By default, NULL values in attributes are suppressed and never exported
+#ignore = UNK
+ignore = ${ignoredAttributeValues}
+
+## MANDATORY parameter that specifies a user-defined name for the resources that will be created
+#type = points
+type = ${type}
+
+## OPTIONAL field name from which name literals (i.e., strings) will be extracted. 
+## Set value UNK if non applicable.
+#name = name
+name = ${name}
+
+## OPTIONAL field name from which classification literals (e.g., type of points, road classes etc.) will be extracted.
+## Set value UNK if non applicable.
+#class = type
+class = ${class}
+
+##############################
+## Namespaces parameters
+## Optional parameters. Change these parameters if you want to use different values for the namespaces and prefixes
+##############################
+
+## Specify the common URI namespace for all generated resources
+#nsURI = http://geoknow.eu/geodata#
+nsURI = http://geoknow.eu/geodata#
+
+## Define a prefix name for the utilized URI namespace (i.e., the previously declared with nsURI)
+#nsPrefix = georesource
+nsPrefix = ${resourceNamespacePrefix}
+
+## Specify the namespace for the underlying geospatial ontology
+#ontologyNS = http://www.opengis.net/ont/geosparql#
+ontologyNS = http://www.opengis.net/ont/geosparql#
+
+## Define a prefix name for the geospatial ontology (i.e., the previously declared with ontologyNS)
+#ontologyNSPrefix = geo
+ontologyNSPrefix = ${ontologyNamespacePrefix}
+
+###############################
+## Spatial Reference parameters
+###############################
+## Optional parameters. These fields should be filled in if a transformation between EPSG reference systems is needed
+## Comment out both properties if geometries are assumed in WGS84 reference system (EPSG:4326).
+#sourceRS = EPSG:2100
+#targetRS = EPSG:4326
+sourceRS = ${sourceEPSG}
+targetRS = ${targetEPSG}
+
+##############################
+## Other parameters
+##############################
+# Optional parameters. Default lang for the labels created in the output RDF. By default, the value will be English-en
+defaultLang=en
+

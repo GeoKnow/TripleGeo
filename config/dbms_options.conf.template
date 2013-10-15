@@ -1,0 +1,142 @@
+##############################
+## Template for TripleGeo configuration in order to convert spatial features stored in a DBMS.
+## Specify parameters according to the examples for your specific dataset.
+## Examples given below assume an existing PostgreSQL+PostGIS database.
+##############################
+
+##############################
+# Input and output parameters
+##############################
+
+## Local paths used during processing (all paths are RELATIVE to executable)
+#tmpDir = ./tmp
+#outputFile = ./output/points_postgis.rdf
+tmpDir = ${tmpDir}
+outputFile = ${outputFile}
+
+## Specify export format for the output file
+## Possible export formats: 
+##   RDF/XML (default) 
+##   RDF/XML-ABBREV 
+##   N-TRIPLES 
+##   TURTLE (or TTL)
+##   N3
+#format = N3
+format = ${outputFormat}
+
+## Specify the type of the triple store where the exported data will be imported.
+## Possible values: 
+##    GeoSPARQL
+##    Virtuoso
+##    wgs84_pos (for WGS84 Geoposition RDF vocabulary)
+#targetStore = GeoSPARQL
+targetStore = ${outputTargetType}
+
+##############################
+# Database parameters (case-insensitive for DBMS connections)
+# Change parameters to reflect your database credentials and contents that will be extracted
+##############################
+
+## Specify the DBMS backend where spatial data is stored.
+## Possible values (use the corresponding INTEGER value for the chosen DBMS): 
+##    1 -> MySQL 
+##    2 -> Oracle Spatial 
+##    3 -> PostGIS 
+##    4 -> IBM DB2.
+#dbType = 3
+dbType = ${databaseBackendType}
+
+## Name of the database to connect
+#dbName=geodb
+dbName = ${databaseName}
+
+## Username for database connection
+#dbUserName = postgres
+dbUserName = ${databaseUserName}
+
+## Password for database connection
+#dbPassword = postgres
+dbPassword = ${databasePassword}
+
+## Specify the IP host name or address on which DBMS server listens for TCP/IP connections from client applications.
+## Set value localhost if working with a local database server.
+#dbHost = localhost
+dbHost = ${databaseHost}
+
+## Specify the TCP/IP port on which the DBMS server listens for connections from client applications.
+#dbPort = 5432
+dbPort = ${databasePort}
+
+## MANDATORY parameter that specifies a user-defined name for the resources that will be created
+#resourceName = points
+resourceName = ${resourceName}
+
+## MANDATORY parameter that indicates the database table which contains spatial features
+#tableName = public.points
+tableName = ${resourceTableName}
+
+## OPTIONAL parameter that specifies a filter for selecting qualifying records
+## It has equivalent syntax to a WHERE clause in SQL, 
+## e.g. condition=town_type = 'TOWN' OR town_type = 'VILLAGE' OR town_type = 'CITY'  
+## Leave blank if all records should be extracted.
+#condition = 
+condition = ${filteringCondition}
+
+## MANDATORY field name containing unique identifier for each entity (i.e., each record)
+#labelColumnName = osm_id
+labelColumnName = ${resourceIdentityColumnName}
+
+## OPTIONAL field name from which name literals (i.e., strings) will be extracted. Leave blank if non applicable.
+#nameColumnName = name
+nameColumnName = ${resourceNamingColumnName}
+
+## OPTIONAL field name from which classification literals (e.g., type of points, road classes etc.) will be extracted. Leave blank if non applicable.
+#classColumnName = type
+classColumnName = ${resourceClassificationColumnName}
+
+## MANDATORY parameter that specifies the name of the geometry field
+#geometryColumnName = geom
+geometryColumnName = ${resourceGeometryColumnName}
+
+## MANDATORY parameter that specifies particular values (e.g., UNK) in attributes that should not be exported as literals
+## By default, NULL values in attributes are suppressed and never exported
+#ignore = UNK
+ignore = ${ignoredAttributeValues}
+
+##############################
+## Namespaces parameters
+## Optional parameters. Change these parameters if you want to use different values for the namespaces and prefixes
+##############################
+
+## Specify the common URI namespace for all generated resources
+#nsURI = http://geoknow.eu/geodata#
+nsURI = http://geoknow.eu/geodata#
+
+## Define a prefix name for the utilized URI namespace (i.e., the previously declared with nsURI)
+#nsPrefix = georesource
+nsPrefix = ${resourceNamespacePrefix}
+
+## Specify the namespace for the underlying geospatial ontology
+#ontologyNS = http://www.opengis.net/ont/geosparql#
+ontologyNS = http://www.opengis.net/ont/geosparql#
+
+## Define a prefix name for the geospatial ontology (i.e., the previously declared with ontologyNS)
+#ontologyNSPrefix = geo
+ontologyNSPrefix = ${ontologyNamespacePrefix}
+
+###############################
+## Spatial Reference parameters
+###############################
+## Optional parameters. These fields should be filled in if a transformation between EPSG reference systems is needed
+## Comment out both properties if geometries are assumed in WGS84 reference system (EPSG:4326).
+#sourceRS = EPSG:2100
+#targetRS = EPSG:4326
+sourceRS = ${sourceEPSG}
+targetRS = ${targetEPSG}
+
+##############################
+## Other parameters
+##############################
+# Optional parameters. Default lang for the labels created in the output RDF. By default, the value will be English-en
+defaultLang=en
+
