@@ -1,3 +1,10 @@
+triplegeo (1.0-3) UNRELEASED; urgency=low
+
+  * Removed unneeded jar libraries, replaced by APT dependencies
+
+ -- Michail Alexakis <alexakis@imis.athena-innovation.gr>  Tue, 15 Oct 2013 18:30:00 -0400
+
+
 triplegeo (1.0-2) UNRELEASED; urgency=low
 
   * Packaged testing data with corresponding config files.

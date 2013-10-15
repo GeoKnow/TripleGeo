@@ -19,8 +19,36 @@ override_dh_auto_build:
 
 override_dh_auto_install:
 	install -m 0644 $$(pwd)/build/jars/triplegeo.jar $$(pwd)/debian/triplegeo/usr/share/java/
-	install -m 0644 $$(pwd)/lib/*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/arq-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/imageio-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/gt-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/jena-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/geoapi-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/geodb-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/net.opengis*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/jai_*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/iri-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/mysql-connector-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/tdb-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/postgis-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/postgresql-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/junit-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/eastwood-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/ecore-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/fop-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/h2-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/hatbox-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/json-simple-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/jsqlparser-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/jsr-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/ojdbc6.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/orai18n.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/org.w3.*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/sqlite-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/wstx-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
+	install -m 0644 $$(pwd)/lib/xsd-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
 	install -m 0755 $$(pwd)/debian/additions/triplegeo.sh $$(pwd)/debian/triplegeo/usr/bin
 	install -m 0644 $$(pwd)/test/data/* $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/test/data
 	install -m 0644 $$(pwd)/test/conf/* $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/test/conf
+
 

@@ -1,6 +1,6 @@
 ## Create a debian package
 
-### Quickstart
+### Build .deb package
 
 Install debian maintainer's toolset:
 
@@ -20,4 +20,30 @@ This should produce the .deb package for your current architecture (in the paren
 
 e.g.
 
-    triplegeo_1.0-2_amd64.deb
+    triplegeo_1.0-3_amd64.deb
+
+### Install .deb package
+
+Let's assume we have built (or just downloaded) triplegeo_1.0-3_amd64.deb. Install through _dpkg_:
+
+    dpkg --install triplegeo_1.0-3_amd64.deb
+
+If the command fails, complaining about missing dependencies, install them through _apt_: 
+
+    apt-get install -f    
+
+### Run triplegeo from shell
+
+All methods to invoke _triplegeo_ that are described in the generic case, also apply here. Additionaly,
+the .deb package ships with a wrapper shell (bash) script that hides some of the impractical java details.
+
+For example:
+    
+    triplegeo.sh run-on-shp path/to/shp-options.conf
+
+Get the description of recognized arguments:
+
+    triplegeo.sh help
+
+
+

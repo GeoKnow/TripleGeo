@@ -3,9 +3,11 @@
     <property name="src_dir" value="src" />
     <property name="build_dir" value="build" />
     <property name="lib_dir" value="lib" />
+    <property name="global.lib_dir" value="/usr/share/java" />
 
     <path id="cp1">
         <!--<pathelement path="/usr/share/java/log4j-1.2.jar"/>-->
+        <fileset dir="${global.lib_dir}" includes="**/*.jar" />
         <fileset dir="${lib_dir}" includes="**/*.jar" />
     </path>
 
