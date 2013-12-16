@@ -7,7 +7,7 @@ Build-Depends: debhelper (>= 8), default-jdk, ant, libjts-java
 
 Package: triplegeo
 Architecture: any
-Depends: default-jdk, libhsqldb-java, liblog4j1.2-java, libcommons-pool-java, libcommons-lang-java, libcommons-httpclient-java, libcommons-logging-java, libcommons-io-java, libcommons-jxpath-java, libcommons-dbcp-java, libcommons-collections-java, libcommons-beanutils-java, libcommons-codec-java, libxpp3-java, libicu4j-java, liblucene2-java, libmysql-java, libxalan2-java, libjaxp1.3-java, libbsf-java, libxsltc-java, libxerces2-java, libjcommon-java, libstax-java, libjdom1-java, libvecmath-java, libjfreechart-java, libavalon-framework-java, libbatik-java, libxmlgraphics-commons-java, libmiglayout-java, libjts-java, libpicocontainer-java, libslf4j-java, ${misc:Depends}
+Depends: default-jdk, libhsqldb-java, liblog4j1.2-java, libcommons-pool-java, libcommons-lang-java, libcommons-httpclient-java, libcommons-logging-java, libcommons-io-java, libcommons-jxpath-java, libcommons-dbcp-java, libcommons-collections-java, libcommons-beanutils-java, libcommons-codec-java, libxpp3-java, libicu4j-java, liblucene2-java, libmysql-java, libxalan2-java, libjaxp1.3-java, libbsf-java, libxsltc-java, libxerces2-java, libjcommon-java, libstax-java, libjdom1-java, libvecmath-java, libjfreechart-java, libavalon-framework-java, libbatik-java, libxmlgraphics-commons-java, libmiglayout-java, libjts-java, libslf4j-java, ${misc:Depends}
 Description: An open-source tool for extracting geospatial features into RDF triples 
  TripleGeo is a utility developed by the Institute for the Management of Information Systems at Athena Research Center under the EU/FP7 project GeoKnow: 
  Making the Web an Exploratory for Geospatial Knowledge. 

@@ -19,6 +19,7 @@ override_dh_auto_build:
 
 override_dh_auto_install:
 	install -m 0644 $$(pwd)/build/jars/triplegeo.jar $$(pwd)/debian/triplegeo/usr/share/java/
+	install -m 0644 $$(pwd)/lib/picocontainer-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
 	install -m 0644 $$(pwd)/lib/arq-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
 	install -m 0644 $$(pwd)/lib/imageio-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
 	install -m 0644 $$(pwd)/lib/gt-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
