@@ -27,12 +27,12 @@ How to use TripleGeo:
 <code>ant package</code>
 </li>
 <li>The current distribution comes with a dummy configuration file <code>options.conf</code>. This file contains indicative values for the most important properties. Self-contained brief instructions can guide you into the extraction process.</li>
-<li>Run the jar file from the command line in 2 alternative modes, depending on the input data source:</li>
+<li>Run the jar file from the command line in 2 alternative modes, depending on the input data source (of course, you should change the directory separator to the one your OS understands, e.g. ":" in the case of *nix systems):</li>
 <ul>
-<li>In case that triples will be extracted from ESRI shapefiles, and assuming that binaries are bundled together in <code>TripleGeo.jar</code>, give a command like this:</br>
-<code>java -cp "./lib/*;./build/jars/TripleGeo.jar" eu.geoknow.athenarc.triplegeo.ShpToRdf options.conf</code></li>
+<li>In case that triples will be extracted from ESRI shapefiles, and assuming that binaries are bundled together in <code>triplegeo.jar</code>, give a command like this:</br>
+<code>java -cp "./lib/*;./build/jars/triplegeo.jar" eu.geoknow.athenarc.triplegeo.ShpToRdf options.conf</code></li>
 <li>Alternatively, if triples will be extracted from a geospatially-enabled DBMS (e.g., Oracle Spatial), give a command like this:</br>
-<code>java -cp "./lib/*;./build/jars/TripleGeo.jar" eu.geoknow.athenarc.triplegeo.wkt.RdbToRdf options.conf</code></li>
+<code>java -cp "./lib/*;./build/jars/triplegeo.jar" eu.geoknow.athenarc.triplegeo.wkt.RdbToRdf options.conf</code></li>
 </ul>
 <li>Wait until the process gets finished, and verify that the resulting output file is according to your specifications.</li>
 </ul>
