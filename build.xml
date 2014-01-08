@@ -18,7 +18,7 @@
 
     <target name="compile">
         <mkdir dir="${build_dir}/classes"/>
-        <javac srcdir="${src_dir}" destdir="${build_dir}/classes" classpathref="cp1" >
+        <javac includeantruntime="false" srcdir="${src_dir}" destdir="${build_dir}/classes" classpathref="cp1" >
             <compilerarg value="-Xlint:unchecked"/>
             <compilerarg value="-Xlint:deprecation"/>
         </javac>
