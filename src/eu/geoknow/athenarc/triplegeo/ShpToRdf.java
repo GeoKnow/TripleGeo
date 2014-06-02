@@ -1,5 +1,5 @@
 /*
- * @(#) ShpToRdf.java	version 1.0   8/2/2013
+ * @(#) ShpToRdf.java	version 1.1   2/6/2014
  *
  * Copyright (C) 2013 Institute for the Management of Information Systems, Athena RC, Greece.
  *
@@ -27,12 +27,12 @@ import java.io.IOException;
 /**
  * Entry point to convert shapefiles into RDF triples.
  * @author Kostas Patroumpas
- * Last modified by: Kostas Patroumpas, 12/6/2013
+ * Last modified by: Kostas Patroumpas, 2/6/2014
  */
 public class ShpToRdf {
   public static void main(String [] args) throws IOException 
   {
-	System.out.println("TripleGeo v1.0 Copyright (C) 2013 Institute for the Management of Information Systems, Athena RC, Greece.\nThis program comes with ABSOLUTELY NO WARRANTY. This is free software, distributed under GPL license.\nYou are welcome to redistribute it under certain conditions as mentioned in the accompanying LICENSE file.");
+	System.out.println("*********************************************************************\n*                      TripleGeo version 1.1                        *\n* Developed by the Institute for Management of Information Systems. *\n* Copyright (C) 2013-2014 Athena Research Center, Greece.           *\n* This program comes with ABSOLUTELY NO WARRANTY.                   *\n* This is FREE software, distributed under GPL license.             *\n* You are welcome to redistribute it under certain conditions       *\n* as mentioned in the accompanying LICENSE file.                    *\n*********************************************************************\n");
 	
 	//Specify properties file for shapefile conversion
     Configuration config = new Configuration(args[0]);     //Argument like "./bin/shp_options.conf"

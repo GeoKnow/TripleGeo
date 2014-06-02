@@ -1,5 +1,5 @@
 /*
- * @(#) RdbToRdf.java 	 version 1.0   8/2/2013
+ * @(#) RdbToRdf.java 	 version 1.1   2/6/2013
  *
  * Copyright (C) 2013 Institute for the Management of Information Systems, Athena RC, Greece.
  *
@@ -79,7 +79,7 @@ import org.opengis.referencing.operation.MathTransform;
  * Modified: 6/3/2013, added support for transformation from a given CRS to WGS84
  * Modified: 15/3/2013, added support for exporting custom geometries to (1) Virtuoso RDF and (2) according to WGS84 Geopositioning RDF vocabulary 
  * Modified: 6/6/2013, added support for IBM DB2 and MySQL databases
- * Last modified by: Kostas Patroumpas, 12/6/2013
+ * Last modified by: Kostas Patroumpas, 2/6/2014
  */
 public class RdbToRdf {
 
@@ -147,7 +147,7 @@ public class RdbToRdf {
    */
   public static void main(String[] args) throws Exception 
   {
-	System.out.println("TripleGeo v1.0 Copyright (C) 2013 Institute for the Management of Information Systems, Athena RC, Greece.\nThis program comes with ABSOLUTELY NO WARRANTY. This is free software, distributed under GPL license.\nYou are welcome to redistribute it under certain conditions as mentioned in the accompanying LICENSE file.");
+	System.out.println("*********************************************************************\n*                      TripleGeo version 1.1                        *\n* Developed by the Institute for Management of Information Systems. *\n* Copyright (C) 2013-2014 Athena Research Center, Greece.           *\n* This program comes with ABSOLUTELY NO WARRANTY.                   *\n* This is FREE software, distributed under GPL license.             *\n* You are welcome to redistribute it under certain conditions       *\n* as mentioned in the accompanying LICENSE file.                    *\n*********************************************************************\n");
 			
     if (args.length >= 0)  {
       Properties properties = new Properties();

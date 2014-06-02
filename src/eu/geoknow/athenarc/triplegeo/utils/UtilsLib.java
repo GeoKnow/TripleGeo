@@ -1,7 +1,7 @@
 /*
- * @(#) UtilsLib.java 	 version 1.0   24/5/2013
+ * @(#) UtilsLib.java 	 version 1.1   10/4/2014
  *
- * Copyright (C) 2013 Institute for the Management of Information Systems, Athena RC, Greece.
+ * Copyright (C) 2013-2014 Institute for the Management of Information Systems, Athena RC, Greece.
  *
  * This library is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,13 +28,18 @@ import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.TimeZone;
 
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
+
 /**
  * Utils Library for TripleGeo
  *
  * @author jonathangsc 
  * initially implemented for geometry2rdf utility (source: https://github.com/boricles/geometry2rdf/tree/master/Geometry2RDF)
  * @version 2nd Feb 2012.
- * Modified by: Kostas Patroumpas, 6/6/2013
+ * Modified by: Kostas Patroumpas, 7/4/2014
  */
 public class UtilsLib {
 
@@ -124,4 +129,21 @@ public class UtilsLib {
 		    }
 	}
 	
+	/** 
+     * Simple transformation method using Saxon XSLT 2.0 processor. 
+     * @param sourcePath - Absolute path to source GML file. 
+     * @param xsltPath - Absolute path to XSLT file. 
+     * @param resultPath - Absolute path to the resulting RDF file. 
+     */  
+    public static void saxonTransform(String sourcePath, String xsltPath, String resultPath) {  
+        TransformerFactory tFactory = TransformerFactory.newInstance();  
+        try 
+        {  
+            Transformer transformer = tFactory.newTransformer(new StreamSource(new File(xsltPath)));  
+            transformer.transform(new StreamSource(new File(sourcePath)), new StreamResult(new File(resultPath)));  
+            System.out.println("XSLT transformation completed successfully.\nOutput writen into file: " + resultPath );
+        } 
+        catch (Exception e) {  e.printStackTrace();  }  
+    } 
+    
 }

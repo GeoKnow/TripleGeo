@@ -26,8 +26,8 @@ How to use TripleGeo:
 <li>Package as a jar (with ant):<br/>
 <code>ant package</code>
 </li>
-<li>The current distribution comes with a dummy configuration file <code>options.conf</code>. This file contains indicative values for the most important properties. Self-contained brief instructions can guide you into the extraction process.</li>
-<li>Run the jar file from the command line in 2 alternative modes, depending on the input data source (of course, you should change the directory separator to the one your OS understands, e.g. ":" in the case of *nix systems):</li>
+<li>The current distribution comes with a dummy configuration file <code>options.conf</code>. This file contains indicative values for the most important properties when accessing data from ESRI shapefiles or a spatial DBMS. Self-contained brief instructions can guide you into the extraction process.</li>
+<li>Run the jar file from the command line in several alternative modes, depending on the input data source (of course, you should change the directory separator to the one your OS understands, e.g. ":" in the case of *nix systems):</li>
 <ul>
 <li>In case that triples will be extracted from ESRI shapefiles, and assuming that binaries are bundled together in <code>triplegeo.jar</code>, give a command like this:</br>
 <code>java -cp "./lib/*;./build/jars/triplegeo.jar" eu.geoknow.athenarc.triplegeo.ShpToRdf options.conf</code></li>
@@ -35,6 +35,16 @@ How to use TripleGeo:
 <code>java -cp "./lib/*;./build/jars/triplegeo.jar" eu.geoknow.athenarc.triplegeo.wkt.RdbToRdf options.conf</code></li>
 </ul>
 <li>Wait until the process gets finished, and verify that the resulting output file is according to your specifications.</li>
+</ul>
+
+The current distribution also offers transformations from other geographical formats, and it also supports GML datasets aligned to EU INSPIRE Directive. More specifically, TripleGeo can transform into RDF triples geometries available in GML (Geography Markup Language) and KML (Keyhole Markup Language). It can also handle INSPIRE-aligned GML data for seven Data Themes (Annex I). Assuming that binaries are bundled together in <code>triplegeo.jar</code>, you may transform such datasets as follows:
+<ul>
+<li>In case that triples will be extracted from a GML file, give a command like this:</br>
+<code>java -cp "./lib/*;./build/jars/triplegeo.jar" eu.geoknow.athenarc.triplegeo.GmlToRdf <input.gml> <output.rdf> </code></li>
+<li>In case that triples will be extracted from a KML file, give a command like this:</br>
+<code>java -cp "./lib/*;./build/jars/triplegeo.jar" eu.geoknow.athenarc.triplegeo.KmlToRdf <input.kml> <output.rdf> </code></li>
+<li>In case that triples will be extracted from an INSPIRE-aligned GML file, you must first configure XSL stylesheet <code>Inspire_main.xsl</code> with specific parameters and then give a command like this:</br>
+<code>java -cp "./lib/*;./build/jars/triplegeo.jar" eu.geoknow.athenarc.triplegeo.InspireToRdf <input.gml> <output.rdf> </code></li>
 </ul>
 
 An alternative way to run the TripleGeo utility (the jar file) is provided via ant targets:<br/>
@@ -50,7 +60,9 @@ or, in the case of the relational database:<br/>
 <p>The current version of TripleGeo utility can access geometries from:</p>
 <ul>
 <li>ESRI shapefiles, a widely used file-based format for storing geospatial features.</li>
-<li>Several geospatially-enabled DBMSs, including: Oracle Spatial 11g, PostGIS, MySQL, and IBM DB2 with Spatial extender.</li>
+<li>Geographical data stored in GML (Geography Markup Language) and KML (Keyhole Markup Language).</li>
+<li>INSPIRE-aligned datasets for seven Data Themes (Annex I) in GML format: Addresses, Administrative Units, Cadastral Parcels, GeographicalNames, Hydrography, Protected Sites, and Transport Networks (Roads).</li>
+<li>Several geospatially-enabled DBMSs, including: Oracle Spatial, PostGIS, MySQL, and IBM DB2 with Spatial extender.</li>
 </ul>
 </ul>
 
