@@ -1,4 +1,10 @@
-triplegeo (1.0-3.1) unstable; urgency=low
+triplegeo (1.0-3.2) ldstack-nightly; urgency=low
+
+  * Minor configuration changes before upload
+
+ -- Michail Alexakis <alexakis@imis.athena-innovation.gr>  Mon, 13 Jan 2014 12:47:44 +0200
+
+triplegeo (1.0-3.1) ldstack-nightly; urgency=low
 
   * Removed unneeded jar libraries, replaced by APT dependencies
 
