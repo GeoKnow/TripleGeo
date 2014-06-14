@@ -1,3 +1,10 @@
+triplegeo (1.1-1) UNRELEASED; urgency=low
+
+  * Packaged new upstream release (1.1)
+  * Changed install prefix (/usr/lib/triplegeo)
+
+ -- Michail Alexakis <alexakis@imis.athena-innovation.gr>  Sat, 14 Jun 2014 18:02:15 +0300
+
 triplegeo (1.0-3.2) ldstack-nightly; urgency=low
 
   * Minor configuration changes before upload

@@ -32,18 +32,28 @@ If the command fails, complaining about missing dependencies, install them throu
 
     apt-get install -f    
 
+We can see the full package description (along with all its dependencies):
+
+    dpkg -I triplegeo_1.0-3_amd64.deb
+
 ### Run triplegeo from shell
 
 All methods to invoke _triplegeo_ that are described in the generic case, also apply here. Additionaly,
-the .deb package ships with a wrapper shell (bash) script that hides some of the impractical java details.
+the .deb package ships with a wrapper shell (bash) script that hides some of the java implementation details.
 
-For example:
+For example, invoke _triplegeo_ on a shapefile (SHP):
     
-    triplegeo.sh run-on-shp path/to/shp-options.conf
+    triplegeo.sh shp path/to/shp-options.conf
 
-Get the description of recognized arguments:
+or on KML file:
+ 
+    triplegeo.sh kml path/to/sample.kml
 
-    triplegeo.sh help
+Get help on supported sub-commands (call without arguments):
 
+    triplegeo.sh
 
+Get help on a specific command:
+
+    triplegeo.sh gml
 

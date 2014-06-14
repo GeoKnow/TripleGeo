@@ -17,41 +17,44 @@ override_dh_auto_build:
 # The subtree under $$(pwd)/debian/triplegeo will be verbatim copied to the target system
 #
 
-override_dh_auto_install:
-	install -m 0644 $$(pwd)/build/jars/triplegeo.jar $$(pwd)/debian/triplegeo/usr/share/java/
-	install -m 0644 $$(pwd)/lib/picocontainer-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/arq-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/imageio-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/gt-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/jena-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/geoapi-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/geodb-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/net.opengis*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/jai_*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/iri-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/mysql-connector-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/tdb-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/postgis-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/postgresql-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/junit-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/eastwood-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/ecore-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/fop-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/h2-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/hatbox-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/json-simple-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/jsqlparser-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/jsr-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/ojdbc6.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/orai18n.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/org.w3.*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/sqlite-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/wstx-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/xsd-*.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0644 $$(pwd)/lib/saxon9he.jar $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/vendor/lib
-	install -m 0755 $$(pwd)/debian/additions/triplegeo.sh $$(pwd)/debian/triplegeo/usr/bin
-	install -m 0644 $$(pwd)/test/data/* $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/test/data
-	install -m 0644 $$(pwd)/test/conf/* $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/test/conf
-	install -m 0644 $$(pwd)/xslt/* $$(pwd)/debian/triplegeo/usr/share/java/triplegeo/xslt
+STAGE_DIR := $$(pwd)/debian/triplegeo/usr/lib/triplegeo
 
+override_dh_auto_install:
+	install -m 0644 $$(pwd)/build/jars/triplegeo.jar $(STAGE_DIR)/lib/triplegeo.jar
+	install -m 0644 $$(pwd)/lib/slf4j-log4j12-1.5.8.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/slf4j-api-1.5.8.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/picocontainer-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/arq-*.jar  $(STAGE_DIR)/lib/vendor             
+	install -m 0644 $$(pwd)/lib/imageio-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/gt-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/jena-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/geoapi-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/geodb-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/net.opengis*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/jai_*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/iri-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/mysql-connector-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/tdb-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/postgis-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/postgresql-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/junit-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/eastwood-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/ecore-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/fop-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/h2-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/hatbox-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/json-simple-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/jsqlparser-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/jsr-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/ojdbc6.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/orai18n.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/org.w3.*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/sqlite-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/wstx-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/xsd-*.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/lib/saxon9he.jar $(STAGE_DIR)/lib/vendor
+	install -m 0644 $$(pwd)/test/data/* $(STAGE_DIR)/test/data
+	install -m 0644 $$(pwd)/test/conf/* $(STAGE_DIR)/test/conf
+	install -m 0644 $$(pwd)/xslt/* $(STAGE_DIR)/xslt
+	install -m 0755 $$(pwd)/debian/additions/triplegeo.sh $(STAGE_DIR)/bin/triplegeo.sh
 

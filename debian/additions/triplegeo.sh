@@ -1,23 +1,80 @@
 #!/bin/bash
 
+cd /usr/lib/triplegeo
+
 command=${1}
-config_file=${2}
 
-if test "${command}" == "run-on-shp" 
-then
-    runnable_class=eu.geoknow.athenarc.triplegeo.ShpToRdf
-elif test "${command}" == "run-on-rdb"
-then
-    runnable_class=eu.geoknow.athenarc.triplegeo.wkt.RdbToRdf
-else
-    echo "Usage: ${0} <command> <config-file>"
-    echo "  <command>          one of {help,run-on-shp,run-on-rdb}"
-    echo "  <config-file>      ini-style configuration file" 
-    exit 0
-fi
+classpath='./lib/triplegeo.jar:/usr/share/java/*:./lib/vendor/*'
 
-classpath='/usr/share/java/triplegeo.jar:/usr/share/java/*:/usr/share/java/triplegeo/vendor/lib/*'
+jvm_args='-Xms2048m'
 
-java -Xms2048m -cp "${classpath}" ${runnable_class} ${config_file}
+case "${command}" in
+    shp)
+        main_class=eu.geoknow.athenarc.triplegeo.ShpToRdf
+        config_file=${2}
+        if test -z "${config_file}"; then
+            echo "Convert a shapefile (SHP) into RDF"
+            echo
+            echo "Usage: ${0} ${command} <config-file>"
+        else
+            java ${jvm_args} -cp "${classpath}" ${main_class} ${config_file}
+        fi
+        ;;
+    rdb)
+        main_class=eu.geoknow.athenarc.triplegeo.wkt.RdbToRdf
+        config_file=${2}
+        if test -z "${config_file}"; then
+            echo "Convert a relational table (RDB) into RDF"
+            echo
+            echo "Usage: ${0} ${command} <config-file>"
+        else
+            java ${jvm_args} -cp "${classpath}" ${main_class} ${config_file}
+        fi
+        ;;
+    gml)
+        main_class=eu.geoknow.athenarc.triplegeo.GmlToRdf
+        input_file=${2}
+        output_file=${3}
+        if test -z "${input_file}"; then
+            echo "Convert a GML file into RDF"
+            echo
+            echo "Usage: ${0} ${command} <input-file> [<output-file>]"
+        else
+            test -z "${output_file}" && output_file=/tmp/$(basename ${input_file}).rdf
+            java ${jvm_args} -cp "${classpath}" ${main_class} ${input_file} ${output_file}
+        fi
+        ;;
+    kml)
+        main_class=eu.geoknow.athenarc.triplegeo.KmlToRdf
+        input_file=${2}
+        output_file=${3}
+        if test -z "${input_file}"; then
+            echo "Convert a KML file into RDF"
+            echo
+            echo "Usage: ${0} ${command} <input-file> [<output-file>]"
+        else
+            test -z "${output_file}" && output_file=/tmp/$(basename ${input_file}).rdf
+            java ${jvm_args} -cp "${classpath}" ${main_class} ${input_file} ${output_file}
+        fi
+        ;;
+    inspire)
+        main_class=eu.geoknow.athenarc.triplegeo.InspireToRdf
+        input_file=${2}
+        output_file=${3}
+        if test -z "${input_file}"; then
+            echo "Convert an INSPIRE-aligned XML file into RDF"
+            echo
+            echo "Usage: ${0} ${command} <input-file> [<output-file>]"
+        else
+            test -z "${output_file}" && output_file=/tmp/$(basename ${input_file}).rdf
+            java ${jvm_args} -cp "${classpath}" ${main_class} ${input_file} ${output_file}
+        fi
+        ;;
+    *)
+        echo "Usage: ${0} <command> <args>"
+        echo "  <command>     one of {shp,rdb,gml,kml,inspire}"
+        echo "  <args>        command-specific args" 
+        ;;
+esac    
 
 exit 0

@@ -1,8 +1,9 @@
-usr/bin
-usr/share
-usr/share/java
-usr/share/java/triplegeo/xslt
-usr/share/java/triplegeo/vendor/lib
-usr/share/java/triplegeo/test/conf
-usr/share/java/triplegeo/test/data
-
+usr/lib/
+usr/lib/triplegeo
+usr/lib/triplegeo/bin
+usr/lib/triplegeo/xslt
+usr/lib/triplegeo/lib
+usr/lib/triplegeo/lib/vendor
+usr/lib/triplegeo/test
+usr/lib/triplegeo/test/data
+usr/lib/triplegeo/test/conf

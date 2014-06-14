@@ -2,7 +2,7 @@
 
 set -e
 
-echo " == Running post-install hooks on triplegeo (command=${1}) == "
+echo "Running post-install hooks on triplegeo"
 
 #DEBHELPER#
 
