@@ -52,5 +52,38 @@
             <arg value="${config}"/>
         </java>
     </target>
+   
+    <target name="run-on-gml" depends="package">
+        <java fork="true" classname="eu.geoknow.athenarc.triplegeo.GmlToRdf">
+            <classpath>
+                <path refid="cp1"/>
+                <path location="${build_dir}/jars/${ant.project.name}.jar"/>
+            </classpath>
+            <arg value="${input}"/>
+            <arg value="${output}"/>
+        </java>
+    </target>
+    
+    <target name="run-on-kml" depends="package">
+        <java fork="true" classname="eu.geoknow.athenarc.triplegeo.KmlToRdf">
+            <classpath>
+                <path refid="cp1"/>
+                <path location="${build_dir}/jars/${ant.project.name}.jar"/>
+            </classpath>
+            <arg value="${input}"/>
+            <arg value="${output}"/>
+        </java>
+    </target>
+    
+    <target name="run-on-inspire" depends="package">
+        <java fork="true" classname="eu.geoknow.athenarc.triplegeo.InspireToRdf">
+            <classpath>
+                <path refid="cp1"/>
+                <path location="${build_dir}/jars/${ant.project.name}.jar"/>
+            </classpath>
+            <arg value="${input}"/>
+            <arg value="${output}"/>
+        </java>
+    </target>
 
 </project>
