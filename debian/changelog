@@ -1,9 +1,10 @@
-triplegeo (1.1-1) UNRELEASED; urgency=low
+triplegeo (1.1-2) ldstack-nightly; urgency=low
 
   * Packaged new upstream release (1.1)
   * Changed install prefix (/usr/lib/triplegeo)
+  * Added dependency to vendor library slf4j
 
- -- Michail Alexakis <alexakis@imis.athena-innovation.gr>  Sat, 14 Jun 2014 18:02:15 +0300
+ -- Michail Alexakis <alexakis@imis.athena-innovation.gr>  Sat, 14 Jun 2014 23:37:16 +0300
 
 triplegeo (1.0-3.2) ldstack-nightly; urgency=low
 
