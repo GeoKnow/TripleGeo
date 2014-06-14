@@ -48,9 +48,16 @@ The current distribution also offers transformations from other geographical for
 </ul>
 
 An alternative way to run the TripleGeo utility (the jar file) is provided via ant targets:<br/>
+in the case of a shapefile input:<br/>
 <code>ant run-on-shp -Dconfig=options.conf</code><br/>
-or, in the case of the relational database:<br/>
+in the case of the relational database:<br/>
 <code>ant run-on-rdb -Dconfig=options.conf</code><br/>
+in the case of a GML input:<br/>
+<code>ant run-on-gml -Dinput=sample.gml -Doutput=sample.rdf</code><br/>
+in the case of a KML input:<br/>
+<code>ant run-on-kml -Dinput=sample.kml -Doutput=sample.rdf</code><br/>
+in the case of an INSPIRE-aligned XML input:<br/>
+<code>ant run-on-inspire -Dinput=sample.xml -Doutput=sample.rdf</code><br/>
 
 <p>Indicative configuration files for several cases are available <a href="https://github.com/GeoKnow/TripleGeo/tree/master/test/conf/">here</a> in order to assist you when preparing your own.
 
