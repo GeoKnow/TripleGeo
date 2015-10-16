@@ -32,7 +32,7 @@ You have 2 options: either build from source (using Apache Ant) or use the prepa
 <code>ant package</code><br/>
 If build finishes successfully, generated JARs will be placed under <code>build/jars</code>.
 </li>
-<ul>
+</ul>
 
 <h4>1.b Use prepackaged JARs</h4>
 
