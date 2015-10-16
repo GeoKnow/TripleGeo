@@ -6,7 +6,7 @@
 <div id="readme" class="clearfix announce instapaper_body md">
 <article class="markdown-body entry-content" itemprop="mainContentOfPage">
 
-<h2><a name="welcome-to-triplegeo" class="anchor" href="#welcome-to-triplegeo"><span class="octicon octicon-link"></span></a>Welcome to TripleGeo: An open-source tool for extracting geospatial features into RDF triples</h2>
+<h1><a name="welcome-to-triplegeo" class="anchor" href="#welcome-to-triplegeo"><span class="octicon octicon-link"></span></a>TripleGeo: An open-source tool for extracting geospatial features into RDF triples</h1>
 
 <p>TripleGeo is a utility developed by the <a href="http://www.ipsyp.gr/">Institute for the Management of Information Systems</a> at <a href="http://www.athena-innovation.gr/en.html">Athena Research Center</a> under the EU/FP7 project <a href="http://geoknow.eu">GeoKnow: Making the Web an Exploratory for Geospatial Knowledge</a>. This generic purpose, open-source tool can be used for integrating features from geospatial databases into RDF triples.</p>
 
@@ -14,28 +14,59 @@
 
 <p>The web site for <a href="https://web.imis.athena-innovation.gr/redmine/projects/geoknow_public/wiki/TripleGeo">TripleGeo</a> provides more details about the project, its architecture, usage tips, and foreseen extensions.</p>
 
-<h3>
-<a name="quick-start" class="anchor" href="#Quick start"><span class="octicon octicon-link"></span></a>Quick start</h3>
+<h2>
+<a name="quick-start" class="anchor" href="#Quick start"><span class="octicon octicon-link"></span></a>Quick start</h2>
 
 How to use TripleGeo:
+
+You have 2 options: either build from source (using Apache Ant) or use the prepackaged binaries (JARs) shipped with this code.
+
+<h4>1.a Build from source</h4>
+
 <ul>
 <li>Build (with ant):<br/>
 <code>mkdir build</code><br/>
 <code>ant compile</code>
 </li>
 <li>Package as a jar (with ant):<br/>
-<code>ant package</code>
+<code>ant package</code><br/>
+If build finishes successfully, generated JARs will be placed under <code>build/jars</code>.
 </li>
-<li>The current distribution comes with a dummy configuration file <code>options.conf</code>. This file contains indicative values for the most important properties when accessing data from ESRI shapefiles or a spatial DBMS. Self-contained brief instructions can guide you into the extraction process.</li>
-<li>Run the jar file from the command line in several alternative modes, depending on the input data source (of course, you should change the directory separator to the one your OS understands, e.g. ":" in the case of *nix systems):</li>
 <ul>
-<li>In case that triples will be extracted from ESRI shapefiles, and assuming that binaries are bundled together in <code>triplegeo.jar</code>, give a command like this:</br>
-<code>java -cp "./lib/*;./build/jars/triplegeo.jar" eu.geoknow.athenarc.triplegeo.ShpToRdf options.conf</code></li>
-<li>Alternatively, if triples will be extracted from a geospatially-enabled DBMS (e.g., Oracle Spatial), give a command like this:</br>
-<code>java -cp "./lib/*;./build/jars/triplegeo.jar" eu.geoknow.athenarc.triplegeo.wkt.RdbToRdf options.conf</code></li>
+
+<h4>1.b Use prepackaged JARs</h4>
+
+In order to use TripleGeo for extracting triples from a spatial dataset, the user should follow these steps (in a Windows platform, but these are similar in Linux as well):
+<ul>
+
+<li>
+Download the current software bundle from https://github.com/GeoKnow/TripleGeo/archive/master.zip</li>
+<li>
+Extract the downloaded .zip file into a separate folder, e.g., <code>c:\temp</code>.</li>
+<li>
+Open a terminal window (in DOS or in Linux) and navigate to the directory where TripleGeo has been extracted, e.g.,
+<code>cd c:\temp\TripleGeo-master</code>. This directory must be the one that holds the LICENSE file. For convenience, this is where you can place your configuration file (e.g., options.conf), although you can specify another path for your configuration if you like.</li>
+<li>Normally, under this same folder there must be a lib/ subdirectory with the required libraries. Make sure that the actual TripleGeo.jar is under the bin/ subdirectory.</li>
+<li>Verify that Java JRE (or SDK) ver 1.7 or later is installed. Currently installed version of Java can be checked using <code>java –version</code> from the command line.</li>
+<li>Next, specify all properties in the required configuration file, e.g., options.conf. You must specify correct paths to files (i.e., in[parameters inputFile, outputFile, and tmpDir), which are RELATIVE to the executable.</li>
+<li>In case that triples will be extracted from ESRI shapefiles, give the following command (in one line):<br/>
+    <code>java -cp lib/*;bin/TripleGeo.jar eu.geoknow.athenarc.triplegeo.ShpToRdf options.conf</code><br/>
+Make sure that the specified paths to .jar files are correct. You must modify these paths to the libraries and/or the configuration file, if you run this command from a path other than the one containing the LICENSE file, as specified in step (3).</li>
+<li>While conversion is running, it periodically issues notifications about its progress. Note that for large datasets (i.e., hundreds of thousands of records), conversion may take several minutes. As soon as processing is finished and all triples are written into a file, the user is notified about the total amount of extracted triples and the overall execution time.</li>
+
 </ul>
-<li>Wait until the process gets finished, and verify that the resulting output file is according to your specifications.</li>
-</ul>
+
+<h4>2. Usage and examples</h4>
+
+<p>The current distribution comes with a dummy configuration file <code>options.conf</code>. This file contains indicative values for the most important properties when accessing data from ESRI shapefiles or a spatial DBMS. Self-contained brief instructions can guide you into the extraction process.</p>
+<p>Run the jar file from the command line in several alternative modes, depending on the input data source (of course, you should change the directory separator to the one your OS understands, e.g. ":" in the case of *nix systems):</p>
+
+<p>In case that triples will be extracted from ESRI shapefiles, and assuming that binaries are bundled together in <code>triplegeo.jar</code>, give a command like this:</br>
+<code>java -cp "./lib/*;./build/jars/triplegeo.jar" eu.geoknow.athenarc.triplegeo.ShpToRdf options.conf</code></p>
+<p>Alternatively, if triples will be extracted from a geospatially-enabled DBMS (e.g., Oracle Spatial), give a command like this:</br>
+<code>java -cp "./lib/*;./build/jars/triplegeo.jar" eu.geoknow.athenarc.triplegeo.wkt.RdbToRdf options.conf</code></p>
+
+<p>Wait until the process gets finished, and verify that the resulting output file is according to your specifications.</p>
 
 The current distribution also offers transformations from other geographical formats, and it also supports GML datasets aligned to EU INSPIRE Directive. More specifically, TripleGeo can transform into RDF triples geometries available in GML (Geography Markup Language) and KML (Keyhole Markup Language). It can also handle INSPIRE-aligned GML data for seven Data Themes (Annex I). Assuming that binaries are bundled together in <code>triplegeo.jar</code>, you may transform such datasets as follows:
 <ul>
