@@ -17,6 +17,7 @@
     xmlns="http://www.opengis.net/gml/3.2"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	xmlns:xs="http://www.w3.org/TR/2008/REC-xml-20081126#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xmlns:geo="http://www.opengis.net/ont/geosparql#"
@@ -77,8 +78,8 @@
 				<xsl:value-of select="concat($baseURI, $id)" />
 			</xsl:attribute>
 		
-			<!-- EDIT: Create 'rdf:label' element with a particular attribute -->
-			<xsl:element name='rdf:label'>
+			<!-- EDIT: Create 'rdfs:label' element with a particular attribute -->
+			<xsl:element name='rdfs:label'>
 				<xsl:value-of select='ogr:arot' />
 			</xsl:element>
 			
