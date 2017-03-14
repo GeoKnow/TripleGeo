@@ -1,6 +1,9 @@
 tmp/*
 build/*
 output/*
+target/*
+
+repo/*
 
 debian/triplegeo.debhelper.log
 debian/files
