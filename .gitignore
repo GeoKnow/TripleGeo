@@ -9,4 +9,8 @@ debian/triplegeo.debhelper.log
 debian/files
 debian/triplegeo/*
 
+.classpath
+.settings
+.project
 
+/target/
